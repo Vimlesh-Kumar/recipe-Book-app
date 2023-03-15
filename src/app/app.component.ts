@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
   source:string='vilesh@12345kgdk'
+
+  vim:string="recipe"
+
+  kamKar(data:string){
+    this.vim=data
+  }
+
 }

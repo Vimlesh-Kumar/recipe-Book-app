@@ -1,1 +1,27 @@
-<p>recipe-item works!</p>
+<!-- for card view of recipe
+        <div class="card" *ngFor="let recipe of recipes">
+            <img [src]="recipe.imagePath" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{recipe.name}}</h5>
+                <p class="card-text">{{recipe.description}}</p>
+                <a href="#" class="btn btn-light accordion-body">For more details</a>
+            </div>
+        </div> -->
+
+<!-- for list view -->
+
+<a href="#" class="list-group-item clearfix mb-2 bg-gradient" (click)="onSelected()">
+    <div class="row p-1">
+        <div class="col-8">
+            <div class="float-left">
+                <h3 class="list-group">{{recipe.name}}</h3>
+                <p class="list-group" style="justify-content: center;">{{recipe.description}}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <span class="float-right">
+                <img src="{{recipe.imagePath}}" alt="" class="list-group" style="max-height: 50px ;">
+            </span>
+        </div>
+    </div>
+</a>
