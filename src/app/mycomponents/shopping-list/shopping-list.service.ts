@@ -6,21 +6,23 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
 })
 export class ShoppingListService {
 
-  ingredientsChanged=new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 80),
     new Ingredient('Tomato', 8),
     new Ingredient('Potato', 45)
   ];
-  getIngredient(){
+  getIngredient() {
     return this.ingredients.slice();
   }
 
-  addIngredient(Ingredient:Ingredient)
-  {
+  addIngredient(Ingredient: Ingredient) {
     this.ingredients.push(Ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
-
+  addIngredients(ingredient: Ingredient[]) {
+    this.ingredients.push(...ingredient)
+    this.ingredientsChanged.emit(this.ingredients.slice())
+  }
 }

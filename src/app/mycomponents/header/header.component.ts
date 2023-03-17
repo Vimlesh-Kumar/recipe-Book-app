@@ -11,4 +11,8 @@ export class HeaderComponent {
   onSelect(feature:string) {
     this.eventBhejaHai.emit(feature)
   }
+
+  routerLinkActiveOptions: {
+    exact: boolean;
+  }
 }
